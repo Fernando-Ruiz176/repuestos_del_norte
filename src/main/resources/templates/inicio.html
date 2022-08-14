@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head data-th-replace="parts/head :: cabecera(~{::title}, _)">
+	<meta charset="UTF-8" />
+	<title>Inicio</title>
+	<link href="/css/estilo.css" rel="stylesheet"/>
+</head>
+<body >
+
+	<nav data-th-replace="parts/menu :: menu"></nav><br><br>
+	<div data-th-replace="parts/scripts :: scripts" ></div>
+	<div class="container-fluid">
+		<h2>Tu Repuesto Americano</h2>
+		<p>Somos una tienda en línea especializada en importar repuestos y accesorios para vehículos americanos directo de USA unificando más de 2.4 millones de autopartes en un sólo lugar.</p>
+		<p>Esta tienda física y virtual, que tiene sucursales a lo largo del país, ofrece repuestos, herramientas y otros productos. En su plataforma virtual te permite buscar las piezas que necesitas ingresando el número de patente de tu auto o la marca, modelo y año. 
+			Con una oferta de repuestos para 42 marcas de vehículos, esta empresa tiene despachos a todo Chile, con una amplia variedad de piezas, como correas, bujías, amortiguadores, repuestos del motor, faros, entre muchos otros.</p>
+		
+		<div data-th-replace="parts/footer :: footer" ></div>
+	</div>	
+</body>
+</html>

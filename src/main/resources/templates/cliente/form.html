@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="margin-top: 100px; margin-left: 500px;">
+	<div class="container">
+		<form data-th-action="@{/cliente/procesar}" data-th-object="${cliente}" method="POST">
+			<h1 style="color:black; margin-top: 10px; margin-bottom: 2px; text-align: center;">Formulario de Cliente</h1>
+			<input type="hidden" data-th-field="*{id}" /><br>
+			<div class="mb-4" style="color:black;">
+				<p>RUT: <br><input type="text" data-th-field="*{rut}"/><br>
+				<span style="color: red;" data-th-if="${#fields.hasErrors('rut')}" data-th-errors="*{rut}" ></span></p>
+			</div>
+			<button class="btn btn-primary" type="submit">Guardar</button>
+			<a data-th-href="@{/}" class="btn btn-primary">volver</a>
+		</form>
+	</div>
+</body>
+</html>

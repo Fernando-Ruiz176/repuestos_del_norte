@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Menu</title>
+
+</head>
+<body>
+	<nav data-th-fragment="menu" class="navbar navbar-expand-lg navbar-dark bg-primary">
+	  	<div class="container-fluid">
+	   		<a class="navbar-brand" href="#">Rep-del-Norte</a>
+	   		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	     		<span class="navbar-toggler-icon"></span>
+	   		</button>
+	    	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	        		<li class="nav-item"><a class="nav-link active" aria-current="page" data-th-href="@{/}">Inicio</a></li>
+	        		<li class="nav-item"><a class="nav-link active" data-th-href="@{/nosotros}">Nosotros</a></li>
+	        		<li class="nav-item"><a class="nav-link active" data-th-href="@{/vendedor/contratado}">Form.Vendedor</a></li>
+	        		
+	        		
+	        		
+	        		<li data-sec-authorize="hasAuthority('admin')" class="nav-item"><a class="nav-link" data-th-href="@{/admin/form-vendedor}">Administracion</a></li>
+	        		<li data-sec-authorize="hasAuthority('admin')" class="nav-item"><a class="nav-link" data-th-href="@{/admin/reporte}">Reporte</a></li>
+	      		</ul>
+	      		<ul class="navbar-nav mb-2 mb-lg-0">
+	      			<li data-sec-authorize="isAuthenticated()" class="nav-item"><a class="nav-link active me-5" href="#">
+	      				Bienvenido <span data-sec-authentication="name" ></span>
+	      				</a></li>
+	      			<li data-sec-authorize="!isAuthenticated()" class="nav-item"><a class="nav-link active" aria-current="page" data-th-href="@{/ingreso}">Ingresar</a></li>
+	        		<li data-sec-authorize="isAuthenticated()" class="nav-item"><a class="nav-link active" aria-current="page" data-th-href="@{/logout}">Salir</a></li>
+	      		</ul>
+	      		<form class="d-flex" role="search">
+	        		<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+	        		<button class="btn btn-outline-success" type="submit">Search</button>
+	      		</form>
+	      		
+	      		
+	    	</div>
+	  	</div>
+	</nav>
+	
+
+</body>
+</html>

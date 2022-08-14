@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head data-th-replace="parts/head :: cabecera(~{::title}, _)">
+	<title>Usuario</title>	
+</head>
+<body>	
+	<nav data-th-replace="parts/menu :: menu"></nav>
+
+	<h1>Pedidos</h1>
+	
+	<form data-th-action="@{/vendedor/crear}" data-th-object="${pedido}" method="post">
+		Usuario: <input type="text" data-th-field="*{usuario}" /><br />
+		Password: <input type="password" data-th-field="*{contrasena}" /><br />
+		Roles: <input type="text" data-th-field="*{roles}" /><br />
+		<button type="submit">Guardar</button>
+	</form>
+
+	<div data-th-replace="parts/scripts"></div>
+	<div data-th-replace="parts/footer :: footer" ></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head data-th-replace="parts/head :: cabecera(~{::title}, _)">
+<meta charset="UTF-8">
+<title>Form. vendedor</title>
+</head>
+<body>
+	<nav data-th-replace="parts/menu :: menu"></nav>
+	<div class="container text-center">
+	<h1></h1>
+	<br>
+	<form action="#" data-th-action="@{/usuario/nuevo}" data-th-object="${usuario}" method="POST" style="width:450px;
+	  		margin-top:200px;
+			padding: 16px;
+			border-radius: 10px;
+			margin: auto;
+			background-color: #ccc;"><br>
+		<h1 class="h3 mb-3 fw-normal">Vendedor</h1>
+		<input type="hidden" data-th-field="*{id}" />
+		
+		<p>
+			Rut: <br><input type="text" data-th-field="*{rut}" />
+			<span data-th-if="${#fields.hasErrors('rut')}" data-th-errors="*{rut}" style="color: red;"></span>
+		</p>
+		
+		<p>
+			Nombre: <br><input type="text" data-th-field="*{nombre}" />
+			<span data-th-if="${#fields.hasErrors('nombre')}" data-th-errors="*{nombre}" style="color: red;"></span>
+		</p>
+		<p>
+			Email: <br><input type="text" data-th-field="*{email}" />
+			<span data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}" style="color: red;"></span>
+		</p>
+		<button type="submit">Guardar</button><br><br>
+		<a data-th-href="@{/}">Volver</a>
+	</form>
+	</div>
+	<div data-th-replace="parts/scripts"></div>
+	<div data-th-replace="parts/footer :: footer" ></div>
+
+</body>
+</html>
